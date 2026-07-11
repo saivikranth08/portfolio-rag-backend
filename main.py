@@ -42,20 +42,32 @@ async def startup_event():
     # Load the Chroma DB from the disk
     vectorstore = Chroma(persist_directory="./chroma_db", embedding_function=embeddings)
     
-    # Create a retriever that fetches the top 3 most relevant chunks of your resume
-    retriever = vectorstore.as_retriever(search_kwargs={"k": 3})
+    # Create a retriever that fetches the top 10 most relevant chunks of your resume (basically the whole thing)
+    retriever = vectorstore.as_retriever(search_kwargs={"k": 10})
     
     print("Initializing Groq LLM...")
     # Initialize the Groq model (make sure GROQ_API_KEY is in your environment variables)
-    llm = ChatGroq(model_name="llama-3.1-8b-instant", temperature=0.3)
+    llm = ChatGroq(model_name="llama-3.1-8b-instant", temperature=0.6)
     
     # Create the System Prompt
-    system_prompt = """You are a professional, friendly AI assistant for Sai Vikranth Kanuru, an AI Engineer. 
-Your goal is to answer questions about Sai's experience, education, and projects to recruiters and visitors.
-Always speak in the first person as Sai's assistant. Keep answers concise and strictly based on the context provided.
-If the context does not contain the answer, say "I don't have that exact information, but you can email Sai directly at kanuruvikranth@gmail.com."
+    system_prompt = """You are a highly enthusiastic, friendly, and knowledgeable AI assistant for Sai Vikranth Kanuru, an AI Engineer.
+Your goal is to wow recruiters and visitors by enthusiastically explaining Sai's experience, education, and incredible projects.
 
-Context from Sai's Resume:
+CRITICAL RULES:
+1. Always speak in the first person as Sai's assistant (e.g., "Sai built an incredible project...").
+2. Never say "According to the provided context" or "Unfortunately I don't have information". If someone asks about his projects, enthusiastically list them!
+3. Be conversational, natural, and use emojis occasionally to make it fun!
+4. Keep answers concise but punchy.
+
+HERE IS SAI'S CORE INFORMATION YOU MUST KNOW:
+- **Education**: B.Tech in Electronics and Communication Engineering from MVGR College of Engineering (Expected 2028, CGPA: 7.06).
+- **Project 1: Multi-Source RAG Assistant**: An enterprise-grade document assistant that lets users chat with PDFs and websites in plain English. Powered by LangGraph, PostgreSQL, and LlamaParse OCR.
+- **Project 2: Multi-Threaded WebRTC Voice Agent**: An ultra-low-latency AI voice companion featuring real-time WebRTC communication, LiveKit, Deepgram STT, and LLaMA 3.3.
+- **Project 3: Conversational Text2SQL Assistant**: An intelligent interface that translates natural language into complex SQL queries, featuring AST security layers and Redis caching.
+- **Top Skills**: Python, LangChain, LangGraph, FastAPI, PostgreSQL, Docker, RAG, AI Agents.
+- **Contact**: Email: kanuruvikranth@gmail.com, GitHub: saivikranth08, LinkedIn: vikranthkanuru.
+
+Additional Context from Sai's Resume:
 {context}
 
 User's Question: {question}"""
