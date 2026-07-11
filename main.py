@@ -6,7 +6,8 @@ from pydantic import BaseModel
 from langchain_community.vectorstores import Chroma
 from langchain_community.embeddings.fastembed import FastEmbedEmbeddings
 from langchain_groq import ChatGroq
-from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
+from langchain_core.messages import HumanMessage, AIMessage
 from langchain_core.output_parsers import StrOutputParser
 from prompt import SYSTEM_PROMPT
 
@@ -50,8 +51,12 @@ async def startup_event():
     # Initialize the Groq model (make sure GROQ_API_KEY is in your environment variables)
     llm = ChatGroq(model_name="llama-3.1-8b-instant", temperature=0.6)
     
-    # Use the imported SYSTEM_PROMPT
-    prompt = ChatPromptTemplate.from_template(SYSTEM_PROMPT)
+    # Use the imported SYSTEM_PROMPT and add a placeholder for chat history
+    prompt = ChatPromptTemplate.from_messages([
+        ("system", SYSTEM_PROMPT),
+        MessagesPlaceholder(variable_name="chat_history"),
+        ("human", "{question}")
+    ])
     
     # Build the RAG chain
     rag_chain = prompt | llm | StrOutputParser()
@@ -59,21 +64,36 @@ async def startup_event():
 
 # Define the request body format
 class ChatRequest(BaseModel):
-    message: str
+    messages: list[dict]
 
 # 5. Create the Chat Endpoint
 @app.post("/chat")
 async def chat_endpoint(request: ChatRequest):
-    # Retrieve relevant documents from Chroma
-    docs = retriever.invoke(request.message)
+    if not request.messages:
+        return {"reply": "Please provide a message."}
+        
+    # The last message is the current user question
+    latest_message = request.messages[-1]["content"]
+    
+    # Format the previous messages for LangChain (excluding the very last one which is passed as 'question')
+    history = []
+    for msg in request.messages[:-1]:
+        if msg["role"] == "user":
+            history.append(HumanMessage(content=msg["content"]))
+        elif msg["role"] == "ai":
+            history.append(AIMessage(content=msg["content"]))
+
+    # Retrieve relevant documents from Chroma using the latest question
+    docs = retriever.invoke(latest_message)
     
     # Combine the document text into a single context string
     context_text = "\n\n".join([doc.page_content for doc in docs])
     
-    # Run the LLM chain
+    # Run the LLM chain, passing the history
     response = rag_chain.invoke({
         "context": context_text,
-        "question": request.message
+        "chat_history": history,
+        "question": latest_message
     })
     
     return {"reply": response}
