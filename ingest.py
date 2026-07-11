@@ -1,7 +1,7 @@
 import os
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_community.embeddings.fastembed import FastEmbedEmbeddings
 from langchain_community.vectorstores import Chroma
 
 # Configuration
@@ -25,8 +25,8 @@ def main():
     print(f"Created {len(chunks)} chunks.")
 
     print("Generating embeddings and saving to Chroma...")
-    # 3. Create embeddings (using a free, fast open-source model)
-    embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+    # Initialize the lightweight fastembed model
+    embeddings = FastEmbedEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
 
     # 4. Save to Chroma Database
     db = Chroma.from_documents(

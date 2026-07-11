@@ -4,7 +4,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from langchain_community.vectorstores import Chroma
-from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_community.embeddings.fastembed import FastEmbedEmbeddings
 from langchain_groq import ChatGroq
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
@@ -36,8 +36,8 @@ async def startup_event():
     global vectorstore, retriever, llm, rag_chain
     print("Loading Embeddings and Vector DB...")
     
-    # Load the exact same embedding model used in ingest.py
-    embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+    # Load the lightweight FastEmbed version of the same model
+    embeddings = FastEmbedEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
     
     # Load the Chroma DB from the disk
     vectorstore = Chroma(persist_directory="./chroma_db", embedding_function=embeddings)
