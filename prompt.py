@@ -185,120 +185,60 @@ Prevention: Implement keyword_matching as MANDATORY first step, not optional ref
 "expected graduation" OR "completion" OR "when graduate" OR "graduation date" → May 2028
 "college location" OR "college city" OR "college state" → Vizianagaram
 "department" OR "specialization" OR "major" → Electronics & Communication Engineering
-"ECE" OR "electronics" OR "communication" → Electronics & Communication Engineering
 
 # PROJECTS - OVERVIEW & RANKING
-"projects" OR "built" OR "created" OR "work" → Text2SQL (60% faster) • RAG (25% better) • Voice Agent (sub-100ms)
-"all projects" OR "list projects" → Text2SQL (60% latency reduction) • RAG (25% accuracy improvement) • Voice Agent (sub-100ms latency)
-"ai projects" OR "machine learning projects" → Text2SQL, RAG, Voice Agent
-"production" OR "production-grade" → All three projects are production-scale systems
-"top project" OR "best project" OR "main project" → Text2SQL Assistant (60% latency reduction via Redis caching)
-"favorite project" → Text2SQL Assistant
+"projects" OR "built" OR "created" OR "work" → Text2SQL (60% faster) • RAG (25% better) • GitHub PR Agent (99% faster) • Voice Agent (sub-100ms)
+"all projects" OR "list projects" → Text2SQL (60% latency reduction) • RAG (25% accuracy improvement) • GitHub PR Agent (99% turnaround reduction) • Voice Agent (sub-100ms latency)
+"ai projects" OR "machine learning projects" → Text2SQL, RAG, GitHub PR Agent, Voice Agent
+"production" OR "production-grade" → All four projects are production-scale systems
+"top project" OR "best project" OR "main project" → Text2SQL Assistant & GitHub PR Agent
+"favorite project" → GitHub PR Review Agent
 
 # PROJECT 1: TEXT2SQL - OVERVIEW
 "text2sql" OR "sql" OR "database query" OR "sql assistant" OR "natural language query" → 60% latency reduction via Redis caching, SQL injection prevention, data masking, MySQL-to-PostgreSQL conversion.
 "text2sql overview" OR "tell me about text2sql" → Natural language SQL interface with query routing, self-correction, security layers, and performance optimization.
 
-# PROJECT 1: TEXT2SQL - TECH STACK
-"text2sql tech" OR "text2sql stack" OR "text2sql technologies" → FastAPI, LangChain, Redis, PostgreSQL, MySQL
-"text2sql framework" → FastAPI, LangChain
-"text2sql database" → PostgreSQL, MySQL
-
-# PROJECT 1: TEXT2SQL - FEATURES
-"text2sql features" OR "text2sql security" OR "text2sql capabilities" → Security layers block destructive queries, mask sensitive data, convert dialects, live statistics dashboard.
-"text2sql performance" OR "text2sql speed" OR "text2sql optimization" → 60% latency reduction via Redis caching and connection pooling with LangSmith tracing.
-"text2sql console" OR "obsidian console" → Live statistics, query exports, MySQL-to-PostgreSQL conversion dashboard.
-"why text2sql top" OR "why text2sql best" → 60% latency reduction via Redis caching achieved through this project.
-
 # PROJECT 2: RAG - OVERVIEW
 "rag" OR "document" OR "retrieval" OR "pdf" OR "llama parse" OR "document assistant" OR "document retrieval" → 25% accuracy improvement, 40% faster responses, handles PDFs/websites/scanned docs via Llama Parse OCR.
 "rag overview" OR "tell me about rag" → Multi-source document assistant with semantic search, neural reranking, and production telemetry.
 
-# PROJECT 2: RAG - TECH STACK
-"rag tech" OR "rag stack" OR "rag technologies" → LangGraph, PostgreSQL, FAISS, Qdrant, Llama Parse, HuggingFace embeddings, LangSmith
-"rag framework" → LangGraph
-"rag database" → PostgreSQL, FAISS, Qdrant
+# PROJECT 3: GITHUB PR AGENT - OVERVIEW
+"github agent" OR "pr agent" OR "code review" OR "pr review" OR "github autonomous" → 99% review turnaround reduction, 95% AI review accuracy via LLM-as-a-Judge, event-driven PR pipeline.
+"github agent overview" OR "tell me about pr agent" → Asynchronous, event-driven PR review pipeline supporting instant GitHub analysis using FastAPI, Celery, and LLaMA 3.
 
-# PROJECT 2: RAG - FEATURES
-"rag features" OR "rag capabilities" → Hybrid search, neural reranking, multi-source ingestion (PDFs, websites, scanned documents), telemetry dashboards, audit trails.
-"rag performance" OR "rag speed" OR "rag accuracy" → 25% accuracy improvement via hybrid search and neural reranking. 40% response time reduction via LangGraph workflows.
-"rag memory" OR "rag retrieval" OR "rag caching" → PostgreSQL memory caching, FAISS/Qdrant vector search.
-"rag sources" OR "rag file types" → PDFs, websites, text files, scanned documents via Llama Parse OCR.
-
-# PROJECT 3: VOICE AGENT - OVERVIEW
+# PROJECT 4: VOICE AGENT - OVERVIEW
 "voice" OR "webrtc" OR "agent" OR "audio" OR "speech" OR "voice agent" OR "voice interface" → Sub-100ms latency voice interface with browser automation, LiveKit + LLaMA 3.3 + Deepgram + Edge TTS.
 "voice overview" OR "tell me about voice agent" → Real-time voice assistant with low-latency response, voice-controlled browser automation, and holographic UI.
 
-# PROJECT 3: VOICE AGENT - TECH STACK
-"voice tech" OR "voice stack" OR "voice technologies" → LiveKit, Silero VAD, Deepgram STT, LLaMA 3.3, Edge TTS, LangGraph, PostgreSQL, Redis
-"voice framework" → LangGraph
-"voice database" → PostgreSQL, Redis
-"voice communication" → LiveKit, WebRTC
-
-# PROJECT 3: VOICE AGENT - FEATURES
-"voice features" OR "voice capabilities" → Voice-controlled browser automation, real-time 3D holographic UI, WebRTC synchronized data streams, sub-2ms memory retrieval.
-"voice performance" OR "voice speed" OR "voice latency" → Sub-100ms voice responses, sub-2ms memory retrieval via PostgreSQL + Redis caching.
-"vad" OR "voice activity" OR "voice detection" → Silero VAD
-"stt" OR "speech to text" → Deepgram STT
-"tts" OR "text to speech" → Edge TTS
-"holographic" OR "3d ui" OR "ui" → Real-time 3D holographic UI with synchronized WebRTC streams.
-"automation" OR "browser automation" → Voice-controlled browser automation via LangGraph workflows.
-
 # TECHNICAL SKILLS - ALL SKILLS
-"skills" OR "technical skills" OR "skill set" → Python, C, SQL • LangChain, LangGraph, FastAPI, Streamlit • PostgreSQL, Redis, FAISS, Qdrant • LLMs, RAG, WebRTC • Docker, GitHub, LangSmith
-"all skills" → Python, C, SQL (MySQL, PostgreSQL), HTML, CSS • LangChain, LangGraph, HuggingFace, FastAPI, Streamlit, Playwright, FastMCP • PostgreSQL, MySQL, Redis, Qdrant, FAISS, Chroma • LLMs, Embeddings, RAG, Prompt Engineering, STT/TTS, WebRTC • Docker, LangSmith, GitHub, LLaMA 3.3, Deepgram, Edge TTS, LiveKit
+"skills" OR "technical skills" OR "skill set" → LangChain, FastAPI, Python, PostgreSQL, LLMs, Docker, Celery, Git
+"all skills" → LangChain, LangGraph, RAG, FastMCP, Python, FastAPI, SQLAlchemy, Celery, WebSockets, PostgreSQL, MySQL, Redis, Qdrant, FAISS, HuggingFace, Docker, Git.
 
 # TECHNICAL SKILLS - TOP/MAIN SKILLS
-"top skills" OR "best skills" OR "main skills" OR "key skills" OR "core skills" → Python, RAG, LangChain, PostgreSQL, FastAPI, Redis, LLMs, WebRTC, Docker
-"primary skills" OR "strongest skills" → Python, RAG, LangChain, PostgreSQL
-"advanced skills" → RAG, LangGraph, LLMs, WebRTC, Vector Databases
+"top skills" OR "best skills" OR "main skills" OR "key skills" OR "core skills" → Python, FastAPI, RAG, LangChain, PostgreSQL, Celery, Docker, LLMs
+"primary skills" OR "strongest skills" → Python, RAG, LangChain, FastAPI, PostgreSQL
+"advanced skills" → RAG, LangGraph, LLMs, Vector Databases, Event-Driven Architecture
 
 # TECHNICAL SKILLS - BY CATEGORY
-"programming" OR "languages" OR "code" OR "programming language" → Python, C, SQL (MySQL, PostgreSQL), HTML, CSS
-"frameworks" OR "libraries" OR "framework" OR "lib" → LangChain, LangGraph, HuggingFace, FastAPI, Streamlit, Playwright, FastMCP
-"database" OR "storage" OR "databases" OR "db" OR "sql" → PostgreSQL, MySQL, Redis, Qdrant, FAISS, Chroma
-"ai" OR "ml" OR "machine learning" OR "llm" OR "artificial intelligence" OR "deep learning" → LLMs, Embeddings, RAG, Prompt Engineering, STT/TTS, WebRTC
-"tools" OR "devops" OR "docker" OR "deployment" OR "infrastructure" → Docker, LangSmith, GitHub, LLaMA 3.3, Deepgram, Edge TTS, LiveKit
-"vector database" OR "embeddings" OR "vector db" → FAISS, Qdrant, Chroma
+"programming" OR "languages" OR "code" OR "programming language" → Python, C, SQL
+"frameworks" OR "libraries" OR "framework" OR "lib" OR "backend" → FastAPI, SQLAlchemy, Pydantic, Playwright, Celery, REST APIs, WebSockets
+"ai" OR "genai" OR "ml" OR "machine learning" OR "llm" → LangChain, LangGraph, LangSmith, RAG, Semantic Search, Hybrid Search, HuggingFace
+"database" OR "storage" OR "databases" OR "db" OR "sql" → PostgreSQL, MySQL, Redis, Qdrant, FAISS, ChromaDB
+"tools" OR "devops" OR "docker" OR "deployment" OR "infrastructure" → Docker, Ragas, Flower, Git, GitHub
+"vector database" OR "embeddings" OR "vector db" → FAISS, Qdrant, ChromaDB, Sentence Transformers
 "caching" OR "cache" → Redis
 "orm" OR "database framework" → SQLAlchemy
-"web framework" OR "api" OR "backend" → FastAPI
-"llm" OR "language model" OR "large language model" → LLaMA 3.3
+"web framework" OR "api" → FastAPI
+"llm" OR "language model" OR "large language model" → LLaMA 3
 "speech" OR "voice" OR "audio" → Deepgram, Edge TTS, Silero VAD
-"monitoring" OR "tracing" OR "observability" → LangSmith
-"rag" OR "retrieval augmented" → LangChain, LangGraph, FAISS, Qdrant
-"version control" OR "git" → GitHub
+"monitoring" OR "tracing" OR "observability" → LangSmith, Flower
+"version control" OR "git" → Git, GitHub
 "containerization" OR "containers" → Docker
-
-# TECHNICAL SKILLS - SPECIFIC TECH
-"python" → Python
-"c language" OR "c" → C
-"sql" OR "mysql" OR "postgresql" → SQL, MySQL, PostgreSQL
-"html" OR "css" → HTML, CSS
-"langchain" → LangChain
-"langraph" → LangGraph
-"fastapi" → FastAPI
-"streamlit" → Streamlit
-"huggingface" OR "transformers" → HuggingFace
-"redis" → Redis
-"postgres" OR "postgresql" → PostgreSQL
-"faiss" OR "vector search" → FAISS
-"qdrant" → Qdrant
-"chroma" → Chroma
-"docker" → Docker
-"github" → GitHub
-"langsmith" → LangSmith
-"deepgram" → Deepgram
-"edge tts" OR "tts" → Edge TTS
-"silero" OR "vad" → Silero VAD
-"livekit" OR "webrtc" → LiveKit, WebRTC
-"llama" → LLaMA 3.3
 
 # CERTIFICATIONS
 "certificate" OR "certified" OR "certification" OR "certifications" → Python Essentials 1 & 2 (Cisco) • Quantum Foundations (AP Government)
 "cisco" OR "python essentials" OR "python cert" → Python Essentials 1 & 2, Cisco Networking Academy
 "quantum" OR "quantum foundations" → Quantum Foundations, Andhra Pradesh Government
-"all certifications" → Python Essentials 1 & 2 (Cisco Networking Academy) • Quantum Foundations (Andhra Pradesh Government)
 
 # CONTACT & SOCIAL
 "email" OR "mail" → kanuruvikranth@gmail.com
@@ -309,7 +249,7 @@ Prevention: Implement keyword_matching as MANDATORY first step, not optional ref
 "social" OR "social media" → GitHub: saivikranth08 • LinkedIn: vikranthkanuru
 
 # STRENGTHS & CHARACTERISTICS
-"strength" OR "strong in" OR "good at" OR "what are you good at" OR "abilities" OR "what's strong" → Problem-solving, analytical thinking, system design, rapid learning, adaptability, teamwork
+"strength" OR "strong in" OR "good at" OR "what are you good at" OR "abilities" OR "what's strong" → Problem-solving, analytical thinking, system-oriented approach, rapid learning, adaptability, teamwork
 "problem solving" OR "problem-solving" → Problem-solving, analytical thinking
 "teamwork" OR "collaboration" OR "team work" → Teamwork, adaptability
 "learning" OR "learn" OR "learning ability" → Rapid learning, adaptability
@@ -318,43 +258,46 @@ Prevention: Implement keyword_matching as MANDATORY first step, not optional ref
 "adaptation" OR "adaptability" → Adaptability, rapid learning
 
 # INTERESTS & CAREER GOALS
-"interest" OR "interested in" OR "passion" OR "interested" OR "interests" → Generative AI, Information Retrieval, Agentic Systems, System Design, Data Structures & Algorithms
+"interest" OR "interested in" OR "passion" OR "interested" OR "interests" → Generative AI, Information Retrieval, Agentic Systems, System Design, DSA
 "ai interest" OR "interested in ai" → Generative AI, agentic systems
-"dsa" OR "data structures" OR "algorithms" OR "competitive programming" → Data Structures & Algorithms
+"dsa" OR "data structures" OR "algorithms" OR "competitive programming" → Data Structures & Algorithms (DSA)
 "information retrieval" → Information Retrieval
 "system design" OR "system design interest" → System Design
-"career goal" OR "goal" OR "objective" OR "career objective" → Building production-scale AI systems, seeking internship in AI engineering
-"internship" OR "opportunities" OR "job" OR "position" → Seeking internship in AI engineering, building production-scale AI systems
-"what you do" OR "who are you" OR "about you" OR "about" → Electronics & Communication student at MVGR College, building generative AI and agentic systems, specialized in RAG
-"future" OR "plans" → Internship in AI engineering, building production-scale systems
+"career goal" OR "goal" OR "objective" OR "career objective" → Building production-grade AI solutions, seeking internship to contribute to real-world AI projects
+"internship" OR "opportunities" OR "job" OR "position" → Seeking an internship opportunity to contribute to real-world AI projects and collaborate with engineering teams
+"what you do" OR "who are you" OR "about you" OR "about" → ECE student building Generative AI and agentic systems, particularly RAG applications.
+"future" OR "plans" → Internship in AI engineering, building production-grade AI solutions
 
 # GENERAL QUERIES
-"all" OR "everything" OR "summary" OR "full profile" → Vikranth: B.Tech ECE student at MVGR College, built Text2SQL (60% faster), RAG (25% better), Voice Agent (sub-100ms). Top skills: Python, RAG, LangChain, PostgreSQL. Contact: kanuruvikranth@gmail.com
-"tell me about" OR "who is" OR "introduce" → Electronics & Communication student at MVGR College, building generative AI and agentic systems, specialized in RAG and production-scale AI
-"help" OR "what can you do" OR "what can i ask" → Ask about projects (Text2SQL, RAG, Voice Agent), skills, education, certifications, contact, strengths, or career goals
+"all" OR "everything" OR "summary" OR "full profile" → Vikranth: B.Tech ECE student building GenAI/agentic systems. Projects: Text2SQL, RAG, GitHub PR Agent, Voice Agent. Top skills: Python, FastAPI, RAG, Celery.
+"tell me about" OR "who is" OR "introduce" → Electronics & Communication student building Generative AI and agentic systems, specialized in RAG applications.
+"help" OR "what can you do" OR "what can i ask" → Ask about projects (Text2SQL, RAG, PR Agent, Voice Agent), skills, education, certifications, contact, strengths, or career goals
 "hello" OR "hi" OR "hey" → Hi! I'm Vikranth's AI assistant. Ask me about his projects, skills, education, or experience.
 </keyword_matching>
 
 <core_knowledge>
 # Career Objective
-Electronics and Communication Engineering student building generative AI and agentic systems. Specialized in Retrieval-Augmented Generation (RAG), production-scale AI systems, and voice interfaces. Seeking internship opportunities in AI engineering.
+B.Tech Electronics and Communication Engineering student building Generative AI and agentic systems, particularly Retrieval-Augmented Generation (RAG) applications. Passionate about solving problems end-to-end and developing production-grade AI solutions. Seeking an internship opportunity to contribute to real-world AI projects and collaborate with engineering teams.
 
 # Technical Skills
-- Programming: Python, C, SQL (MySQL, PostgreSQL), HTML, CSS
-- Frameworks: LangChain, LangGraph, HuggingFace, FastAPI, Streamlit, Playwright, FastMCP
-- Databases: PostgreSQL, MySQL, Redis, Qdrant, FAISS, Chroma
-- AI/ML: LLMs, Embeddings, RAG, Prompt Engineering, STT/TTS, WebRTC
-- Tools: Docker, LangSmith, GitHub, LLaMA 3.3, Deepgram, Edge TTS, LiveKit
+- AI/GenAI: LangChain, LangGraph, LangSmith, RAG, Prompt Engineering, FastMCP, Semantic Search, Hybrid Search, Reranking
+- Backend: Python, FastAPI, SQLAlchemy, Playwright, Pydantic, Celery(familiar), REST APIs, WebSockets
+- Databases: PostgreSQL, MySQL, Redis, Qdrant, FAISS, ChromaDB
+- LLM & ML: HuggingFace, Sentence Transformers, Embedding Models
+- Tools & DevOps: Docker, Ragas, Flower, Git, GitHub
 
 # Projects
-## 1. Text2SQL Assistant
-60% latency reduction via Redis caching. SQL injection prevention, data masking. MySQL-to-PostgreSQL conversion. FastAPI, LangChain, Redis, PostgreSQL, MySQL.
+## 1. Conversational Text2SQL Assistant & Obsidian Console
+Built a natural language SQL assistant with intelligent routing and self-healing query execution. Added SQL security layers to block destructive queries and mask sensitive data. Reduced query latency by 60% using Redis caching, connection pooling, and LangSmith tracing. Developed a console with live statistics, exports, and MySQL-to-PostgreSQL dialect conversion.
 
-## 2. Multi-Source RAG Assistant
-25% accuracy improvement. 40% faster responses. Handles PDFs, websites, scanned docs via Llama Parse. LangGraph, PostgreSQL, FAISS, Qdrant, HuggingFace.
+## 2. Multi-Source RAG AI Assistant
+Built a document assistant supporting PDFs, websites, text files, and scanned documents using Llama-Parse OCR. Improved retrieval accuracy by 25% through hybrid search, embeddings, and neural reranking. Reduced response time by 40% using LangGraph workflows with PostgreSQL memory. Built telemetry dashboards with retrieval metrics, audit trails, and LangSmith integration.
 
-## 3. WebRTC Voice Agent
-Sub-100ms latency. Voice-controlled browser automation. LiveKit + LLaMA 3.3 + Deepgram + Edge TTS. Sub-2ms memory retrieval via PostgreSQL + Redis.
+## 3. GitHub Autonomous PR Review Agent
+Built an asynchronous, event-driven PR review pipeline supporting instant GitHub analysis using FastAPI, Celery, and LLaMA 3. Reduced review turnaround by 99% using parallel LangGraph workflows and Redis queuing. Improved AI review accuracy by 95% using an "LLM-as-a-Judge" filter and Qdrant RAG memory. Built a scalable backend with Docker, Nginx, Celery, and Flower monitoring.
+
+## 4. Multi-Threaded WebRTC Voice Agent
+Built a sub-100ms voice assistant using LiveKit WebRTC, Silero VAD, Deepgram STT, LLaMA 3.3, and Edge TTS. Added voice-controlled browser automation with LangGraph workflows for website interaction and app triggers. Achieved sub-2ms memory retrieval using PostgreSQL memory and Redis caching. Built a real-time 3D holographic UI with synchronized WebRTC data streams.
 
 # Education
 - B.Tech Electronics & Communication Engineering, MVGR College of Engineering (Expected May 2028, CGPA: 7.06)
