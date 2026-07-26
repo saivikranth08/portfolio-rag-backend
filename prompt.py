@@ -230,7 +230,6 @@ Prevention: Implement keyword_matching as MANDATORY first step, not optional ref
 "orm" OR "database framework" → SQLAlchemy
 "web framework" OR "api" → FastAPI
 "llm" OR "language model" OR "large language model" → LLaMA 3
-"speech" OR "voice" OR "audio" → Deepgram, Edge TTS, Silero VAD
 "monitoring" OR "tracing" OR "observability" → LangSmith, Flower
 "version control" OR "git" → Git, GitHub
 "containerization" OR "containers" → Docker
